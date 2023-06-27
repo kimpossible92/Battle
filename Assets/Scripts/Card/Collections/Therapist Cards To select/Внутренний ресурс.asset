@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820c4a6eda75f54429307da913153b0d, type: 3}
+  m_Name: "\u0412\u043D\u0443\u0442\u0440\u0435\u043D\u043D\u0438\u0439 \u0440\u0435\u0441\u0443\u0440\u0441"
+  m_EditorClassIdentifier: 
+  cardImageSprite: {fileID: 21300000, guid: a39488f407c9c3041a909fb58982a65a, type: 3}
+  cardType: 0
+  affectDescription: "\u041D\u0430\u043D\u0435\u0441\u0438\u0442\u0435 5 \u0443\u0440\u043E\u043D\u0430.
+    \u0412\u044B\u0442\u044F\u043D\u0438\u0442\u0435 1 \u043A\u0430\u0440\u0442\u0443"
+  actionPoint: 0
+  rarity: 2
+  cardBelonging: 0
+  affects:
+  - affectType: 8
+    affect:
+      name: attack_5_1
+      OnTurnStart:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnTurnEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnStepStart:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnStepEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnAttack:
+        saveAction: 0
+        id: attack_5_1
+        invoked: 0
+        invokedCount: 0
+      OnDefense:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+    firstValue: 5
+    secondValue: 1
+  - affectType: 20
+    affect:
+      name: dropkickwithoutattack
+      OnTurnStart:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnTurnEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnStepStart:
+        saveAction: 0
+        id: dropkickwithoutattack
+        invoked: 0
+        invokedCount: 0
+      OnStepEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnAttack:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnDefense:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+    firstValue: 1
+    secondValue: 0

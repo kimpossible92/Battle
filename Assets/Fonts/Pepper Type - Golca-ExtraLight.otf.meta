@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6e241516e7763f049baa1afcba06f8c8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Golca
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5275ca254a703024691d15766b219d59, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

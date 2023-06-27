@@ -1,0 +1,61 @@
+{ "skeleton": { "images": "C:/Users/1/inPhobia-Card-Battle-Game-Unity-3D/Assets/Textures/images/" },
+"PhotoshopToSpine": { "scale": 1, "padding": 1, "trim": true },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Layer 0", "bone": "root", "attachment": "Layer 0" },
+	{ "name": "Shadow", "bone": "root", "attachment": "Shadow", "blend": "multiply" },
+	{ "name": "Layer 10", "bone": "root", "attachment": "Layer 10" },
+	{ "name": "Layer 9", "bone": "root", "attachment": "Layer 9" },
+	{ "name": "Layer 8", "bone": "root", "attachment": "Layer 8" },
+	{ "name": "Layer 7", "bone": "root", "attachment": "Layer 7" },
+	{ "name": "Layer 6", "bone": "root", "attachment": "Layer 6" },
+	{ "name": "Layer 5", "bone": "root", "attachment": "Layer 5" },
+	{ "name": "Layer 4", "bone": "root", "attachment": "Layer 4" },
+	{ "name": "Layer 3", "bone": "root", "attachment": "Layer 3" },
+	{ "name": "Layer 2", "bone": "root", "attachment": "Layer 2" },
+	{ "name": "Layer 1", "bone": "root", "attachment": "Layer 1" }
+],
+"skins": {
+	"default": {
+		"Layer 0": {
+			"Layer 0": { "x": 402, "y": -450, "width": 806, "height": 902 }
+		},
+		"Shadow": {
+			"Shadow": { "x": 437, "y": -450.5, "width": 168, "height": 153 }
+		},
+		"Layer 10": {
+			"Layer 10": { "x": 542, "y": -330, "width": 74, "height": 114 }
+		},
+		"Layer 9": {
+			"Layer 9": { "x": 497, "y": -365.5, "width": 102, "height": 67 }
+		},
+		"Layer 8": {
+			"Layer 8": { "x": 431, "y": -306, "width": 134, "height": 150 }
+		},
+		"Layer 7": {
+			"Layer 7": { "x": 364.5, "y": -304, "width": 79, "height": 122 }
+		},
+		"Layer 6": {
+			"Layer 6": { "x": 532, "y": -274, "width": 142, "height": 124 }
+		},
+		"Layer 5": {
+			"Layer 5": { "x": 666, "y": -211, "width": 170, "height": 178 }
+		},
+		"Layer 4": {
+			"Layer 4": { "x": 91.5, "y": -209, "width": 171, "height": 280 }
+		},
+		"Layer 3": {
+			"Layer 3": { "x": 714.5, "y": -209, "width": 173, "height": 280 }
+		},
+		"Layer 2": {
+			"Layer 2": { "x": 694.5, "y": -439, "width": 213, "height": 192 }
+		},
+		"Layer 1": {
+			"Layer 1": { "x": 167.5, "y": -475, "width": 89, "height": 264 }
+		}
+	}
+},
+"animations": { "animation": {} }
+}

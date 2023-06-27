@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c0a74329eaa3b0438772dda66949144, type: 3}
+  m_Name: SuperSonic
+  m_EditorClassIdentifier: 
+  _name: SuperSonic
+  _description: 
+  _type: 1
+  _power: 0
+  _accuary: 100
+  _alwaysHits: 0
+  SpIndex: 7
+  _pp: 20
+  _priority: 0
+  _category: 2
+  _effeckts:
+    boosts: []
+    status: 0
+    volatileStatus: 6
+  _secondaries: []
+  _target: 0

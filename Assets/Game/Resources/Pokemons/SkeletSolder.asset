@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7337b2a0079827940a78f96c34737510, type: 3}
+  m_Name: SkeletSolder
+  m_EditorClassIdentifier: 
+  _name: SkeletSolder
+  _description: 
+  _frontSprite: {fileID: 21300000, guid: 62b04526b7e5a874eb1c54d3a86dc43e, type: 3}
+  _backSprite: {fileID: 21300000, guid: 62b04526b7e5a874eb1c54d3a86dc43e, type: 3}
+  _type1: 4
+  _type2: 7
+  _growthRate: 1
+  GetSprites:
+  - {fileID: 21300000, guid: 62b04526b7e5a874eb1c54d3a86dc43e, type: 3}
+  - {fileID: 21300000, guid: fc7baf53a3156954eb015fc6981f913a, type: 3}
+  - {fileID: 21300000, guid: fc7baf53a3156954eb015fc6981f913a, type: 3}
+  _maxHp: 45
+  _attack: 49
+  _defanse: 65
+  _spAttack: 65
+  _spDefanse: 45
+  _speed: 250
+  Image: {fileID: 7606410715225974706, guid: c5706695d68556c49b5c770ca2411baf, type: 3}
+  _expYield: 250
+  _catchRate: 255
+  _learnableMoves:
+  - _moveBase: {fileID: 11400000, guid: a20d7afab2163774e9828b9370bca751, type: 2}
+    _level: 5
+  - _moveBase: {fileID: 11400000, guid: ea138d57152caed4aa1533f5d3da683e, type: 2}
+    _level: 4
+  - _moveBase: {fileID: 11400000, guid: 49e60cc84a5a34048b1d971b957d99c3, type: 2}
+    _level: 7
+  - _moveBase: {fileID: 11400000, guid: 49e60cc84a5a34048b1d971b957d99c3, type: 2}
+    _level: 7

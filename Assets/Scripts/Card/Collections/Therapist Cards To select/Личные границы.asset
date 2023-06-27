@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820c4a6eda75f54429307da913153b0d, type: 3}
+  m_Name: "\u041B\u0438\u0447\u043D\u044B\u0435 \u0433\u0440\u0430\u043D\u0438\u0446\u044B"
+  m_EditorClassIdentifier: 
+  cardImageSprite: {fileID: 21300000, guid: 680d24f286188f3459c7b85b575e981c, type: 3}
+  cardType: 1
+  affectDescription: "\u0423\u0434\u0432\u043E\u0439\u0442\u0435 \u0432\u0430\u0448
+    \u0411\u043B\u043E\u043A"
+  actionPoint: 1
+  rarity: 0
+  cardBelonging: 0
+  affects:
+  - affectType: 14
+    affect:
+      name: doubletheblock
+      OnTurnStart:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnTurnEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnStepStart:
+        saveAction: 0
+        id: doubletheblock
+        invoked: 0
+        invokedCount: 0
+      OnStepEnd:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnAttack:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+      OnDefense:
+        saveAction: 0
+        id: 
+        invoked: 0
+        invokedCount: 0
+    firstValue: 5
+    secondValue: 0

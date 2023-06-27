@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7337b2a0079827940a78f96c34737510, type: 3}
+  m_Name: Charmander
+  m_EditorClassIdentifier: 
+  _name: 
+  _description: 
+  _frontSprite: {fileID: 21300000, guid: c798216650a75a841b6e1dde2c1c778b, type: 3}
+  _backSprite: {fileID: 21300000, guid: c798216650a75a841b6e1dde2c1c778b, type: 3}
+  _type1: 1
+  _type2: 0
+  _growthRate: 0
+  GetSprites:
+  - {fileID: 21300000, guid: c798216650a75a841b6e1dde2c1c778b, type: 3}
+  - {fileID: 21300000, guid: 5ba6e95557da2814287b4733eaa1fc7e, type: 3}
+  - {fileID: 21300000, guid: c798216650a75a841b6e1dde2c1c778b, type: 3}
+  _maxHp: 39
+  _attack: 52
+  _defanse: 43
+  _spAttack: 60
+  _spDefanse: 50
+  _speed: 65
+  Image: {fileID: 7606410715225974706, guid: 98531f5d656b19a4f8d5ef5c4f29123c, type: 3}
+  _expYield: 62
+  _catchRate: 255
+  _learnableMoves:
+  - _moveBase: {fileID: 11400000, guid: fde9fcebc5d8afb43bad73ed01805d57, type: 2}
+    _level: 1
+  - _moveBase: {fileID: 11400000, guid: ea138d57152caed4aa1533f5d3da683e, type: 2}
+    _level: 4
+  - _moveBase: {fileID: 11400000, guid: 736331f471f278346a6f2dea8345ca2a, type: 2}
+    _level: 7
+  - _moveBase: {fileID: 11400000, guid: 736331f471f278346a6f2dea8345ca2a, type: 2}
+    _level: 7
