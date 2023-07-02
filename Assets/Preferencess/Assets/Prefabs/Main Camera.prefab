@@ -1,0 +1,258 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1584278644382348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4709199153285568}
+  - component: {fileID: 20360231546573882}
+  - component: {fileID: 124592160197165800}
+  - component: {fileID: 81915804352838100}
+  - component: {fileID: 114396382626856754}
+  - component: {fileID: 114360892286749716}
+  - component: {fileID: 114460203489475424}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4709199153285568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_LocalRotation: {x: 0.15803015, y: -0, z: -0, w: 0.9874343}
+  m_LocalPosition: {x: -0.23, y: 2.72, z: -3.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 18.185001, y: 0, z: 0}
+--- !u!20 &20360231546573882
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967039
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!124 &124592160197165800
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+--- !u!81 &81915804352838100
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+--- !u!114 &114396382626856754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3010e0aeee220684c9120c54c5ecf05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  AvoidObstacles: 1
+  IgnoreObstaclesWhenZooming: 1
+  Zoom: 10
+  ShakingAffectsAim: 1
+  AskForSmoothRotations: 1
+  States:
+    Default:
+      Offset: {x: 0.64, y: 0.1, z: -2.5}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Aim:
+      Offset: {x: 0.75, y: -0.25, z: -1.7}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Melee:
+      Offset: {x: 0.3, y: -0.3, z: -4}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Crouch:
+      Offset: {x: 0.75, y: -0.8, z: -1}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    LowCover:
+      Offset: {x: 0.5, y: -0.3, z: -1.5}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 1.75, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    LowCoverGrenade:
+      Offset: {x: 0.23, y: -0.23, z: -2.2}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    TallCover:
+      Offset: {x: 0.5, y: -0.3, z: -1.5}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    TallCoverBack:
+      Offset: {x: 0.65, y: -0.3, z: -1.5}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 1.6, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Corner:
+      Offset: {x: 1.2, y: -0.44, z: -2.4}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 1.75, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Climb:
+      Offset: {x: 0.6, y: -0.75, z: -1.75}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 2, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Dead:
+      Offset: {x: 0, y: 1, z: -2.5}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 0, z: 0}
+      FOV: 60
+      MinAngle: -65
+      MaxAngle: 45
+    Zoom:
+      Offset: {x: 0.75, y: -0.25, z: -1}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 1
+      ConstantPivot: {x: 0, y: 0, z: 0}
+      FOV: 40
+      MinAngle: -65
+      MaxAngle: 45
+    LowCornerZoom:
+      Offset: {x: 1.2, y: -0.44, z: -1.2}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 1.35, z: 0}
+      FOV: 40
+      MinAngle: -65
+      MaxAngle: 45
+    TallCornerZoom:
+      Offset: {x: 1.2, y: -0.44, z: -1.2}
+      Orientation: {x: 0, y: 0, z: 0}
+      Pivot: 0
+      ConstantPivot: {x: 0, y: 1.75, z: 0}
+      FOV: 40
+      MinAngle: -65
+      MaxAngle: 45
+  Horizontal: 318.5033
+  Vertical: 12.926104
+  VerticalRecoil: 0
+  HorizontalRecoil: 0
+--- !u!114 &114360892286749716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdc63f3f85bb33438fe7e7cdffbc0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114460203489475424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584278644382348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 62a81ea9143806d4da8feaa9cf41ba0b, type: 2}

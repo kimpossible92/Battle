@@ -39,7 +39,7 @@ public class CombatManager : MonoBehaviour
     }
     public void NewRound()
     {
-        CharacterController.instance.inCombat = true;
+        CharactController.instance.inCombat = true;
         roundTacker++;
         currentFighter = null;
         turnNumber = 0;
@@ -63,7 +63,7 @@ public class CombatManager : MonoBehaviour
             currentFighter.canPlay = true;
             Debug.Log("Tour de : " + currentFighter);
             if (currentFighter.isCharacter)
-                CharacterController.instance.ActivatePlayerController();
+                CharactController.instance.ActivatePlayerController();
         }
         else
         {
@@ -75,7 +75,7 @@ public class CombatManager : MonoBehaviour
     {
         currentFighter.canPlay = false;
         if (currentFighter.isCharacter)
-            CharacterController.instance.DesactivatePlayerController();
+            CharactController.instance.DesactivatePlayerController();
         turnNumber++;
         NewTurn();
     }

@@ -191,7 +191,7 @@ namespace Photon.Pun.Demo.Asteroids
             Vector3 position = new Vector3(x, 0.0f, z);
             Quaternion rotation = Quaternion.Euler(0.0f, angularStart, 0.0f);
 
-            PhotonNetwork.Instantiate("PlayerSpaceship", position, rotation, 0);      // avoid this call on rejoin (ship was network instantiated before)
+            PhotonNetwork.Instantiate("Spaceship", position, rotation, 0);      // avoid this call on rejoin (ship was network instantiated before)
 
             if (PhotonNetwork.IsMasterClient)
             {

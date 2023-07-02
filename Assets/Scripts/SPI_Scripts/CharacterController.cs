@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterController : MonoBehaviour
+public class CharactController : MonoBehaviour
 {
-    public static CharacterController instance;
+    public static CharactController instance;
     public bool inCombat;
     public Button endTurnButton;
     public GameObject playerCombatInterface;

@@ -353,7 +353,7 @@ public class PatientManager : MonoBehaviour
         if (patient.health <= 0)
         {
             patient.health = 0;
-            GameManager.instance.LevelFailed();
+            //GameManager.instance.LevelFailed();
         }
         UpdateSpikesTMP();
         UpdateHealthBar();

@@ -14,7 +14,7 @@ public class MapArea : MonoBehaviour
     [SerializeField] Camera GetCamera1, GetCamera2;
     [SerializeField] GameObject GetCameraRig,Ellen;
     [SerializeField] TestHelper _testHelper;
-    [SerializeField] NaughtyCharacter.PlayerInputComponent inputComponent;
+    //[SerializeField] NaughtyCharacter.PlayerInputComponent inputComponent;
     private void Awake()
     {
         Ellen.gameObject.SetActive(false);
@@ -35,7 +35,7 @@ public class MapArea : MonoBehaviour
     {
         GetCamera1.gameObject.SetActive(false);
         GetCamera2.gameObject.SetActive(false);
-        inputComponent.gameObject.SetActive(true);
+        //inputComponent.gameObject.SetActive(true);
         _testHelper.gameObject.SetActive(true);
         Ellen.gameObject.SetActive(true);
         GetCameraRig.gameObject.SetActive(true);

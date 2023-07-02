@@ -64,7 +64,7 @@ namespace Photon.Pun
     public static partial class PhotonNetwork
     {
         /// <summary>Version number of PUN. Used in the AppVersion, which separates your playerbase in matchmaking.</summary>
-        public const string PunVersion = "2.41";
+        public const string PunVersion = "2.40";
 
         /// <summary>Version number of your game. Setting this updates the AppVersion, which separates your playerbase in matchmaking.</summary>
         /// <remarks>
@@ -3204,10 +3204,10 @@ namespace Photon.Pun
             // in the editor, store the settings file as it's not loaded
             #if  UNITY_EDITOR
             // don't save the settings before OnProjectUpdated got called (this hints at an ongoing import/load)
-            if (!PhotonEditorUtils.ProjectChangedWasCalled)
-            {
-                return;
-            }
+            //if (!PhotonEditorUtils.ProjectChangedWasCalled)
+            //{
+            //    return;
+            //}
 
             string punResourcesDirectory = PhotonNetwork.FindPunAssetFolder() + "Resources/";
             string serverSettingsAssetPath = punResourcesDirectory + PhotonNetwork.ServerSettingsFileName + ".asset";

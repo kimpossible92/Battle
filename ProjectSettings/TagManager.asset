@@ -4,9 +4,30 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - IsHitable
-  - Chao
-  - Arvore
+  - Enemy
+  - InventoryDisplaySlot
+  - LegArmor
+  - Boots
+  - Misc1
+  - HeadArmor
+  - Misc2
+  - Gloves
+  - ChestArmor
+  - Weapon
+  - Projectile
+  - Bullet
+  - FxTemporaire
+  - enemy
+  - Fire
+  - HardFloor
+  - Doorway
+  - Brick
+  - Wood
+  - Glass
+  - Concrete
+  - Metal
+  - Water
+  - Dirt
   layers:
   - Default
   - TransparentFX
@@ -14,7 +35,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Sprites
+  - 
   - 
   - 
   - 
@@ -43,7 +64,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Character
-    uniqueID: 1273013099
     locked: 0
