@@ -14,6 +14,7 @@ public abstract class DetectionArea : MonoBehaviour,IDetectable
     {
         return _detectables;
     }
+    void Start() { _detectables = new List<IDetectable>(); }
     private void OnCollisionStay(Collision collision)
     {
         if (!collision.gameObject.TryGetComponent<IDetectable>(out var detectable))

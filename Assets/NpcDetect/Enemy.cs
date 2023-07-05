@@ -35,6 +35,7 @@ public class Enemy2 : MonoBehaviour
     #endregion
     private void Start()
     {
+        DetectionArea = GetComponent<DetectionArea>();
         timeOfLastAttack = float.MinValue;
         playerIsAlive = true;
         index = Random.Range(0, waypoints.Length);
