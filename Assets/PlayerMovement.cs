@@ -54,7 +54,9 @@ public class PlayerMovement : MonoBehaviour
             transform.LookAt(target);
 
             // TODO: Figure out how to implement rotation speed
-            // transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(target), rotateSpeed); // This is a little buggy
+            // transform.rotation = Quaternion.RotateTowards(transform.rotation,
+            //Quaternion.LookRotation(target), rotateSpeed); 
+            // This is a little buggy
         }
     }
 

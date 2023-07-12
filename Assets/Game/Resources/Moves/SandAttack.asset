@@ -19,6 +19,7 @@ MonoBehaviour:
   _accuary: 100
   _alwaysHits: 0
   SpIndex: 4
+  MovedSprite: {fileID: 21300000, guid: b7fa16bc5b43b88439ee579d5e754765, type: 3}
   _pp: 20
   _priority: 0
   _category: 2

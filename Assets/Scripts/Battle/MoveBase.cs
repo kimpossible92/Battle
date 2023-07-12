@@ -13,14 +13,14 @@ public class MoveBase : ScriptableObject
     [SerializeField] int _accuary;
     [SerializeField] bool _alwaysHits;
 	[SerializeField] int SpIndex;
-	//[SerializeField] Sprite MovedSprite;
+	[SerializeField] Sprite MovedSprite;
     [SerializeField] int _pp;
     [SerializeField] int _priority;
     [SerializeField] MoveCategory _category;
     [SerializeField] MoveEfeckts _effeckts;
     [SerializeField] List<SecondaryEffects> _secondaries;
     [SerializeField] Movetarget _target;
-
+    public Sprite MovedsSprite { get { return MovedSprite; } }
     public string Name
     {
         get { return _name; }

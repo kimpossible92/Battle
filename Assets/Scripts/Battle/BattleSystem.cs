@@ -161,7 +161,7 @@ public class BattleSystem : MonoBehaviour
     private IEnumerator Reload(float cooldown,BattleUnit firstUnit)
     {
         firstEffect.SetActive(true);
-		secondEffect.GetComponent<Image>().sprite = _battleSprite[_playerUnit.Pokemon.CurrentMove.Base.spriteIndex];
+		secondEffect.GetComponent<Image>().sprite = _playerUnit.Pokemon.CurrentMove.Base.MovedsSprite;
         firstUnit.GetComponent<Image>().sprite = firstUnit.Pokemon.Base.GetSprites[1];
         firstUnit.GetComponent<Animator>().enabled = false;
         Vector2 OldPos = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition;
@@ -176,9 +176,15 @@ public class BattleSystem : MonoBehaviour
     {
 
     }
-    private IEnumerator Reload2(float cooldown, BattleUnit firstUnit)
+    Vector2 OldPos2;
+    private void Reload2(float cooldown, BattleUnit firstUnit)
     {
-        yield return new WaitForSeconds(cooldown);
+        firstUnit.GetComponent<Image>().sprite = firstUnit.Pokemon.Base.GetSprites[1];
+        firstUnit.GetComponent<Animator>().enabled = false;
+        OldPos2 = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition;
+        firstUnit.GetComponent<Image>().rectTransform.anchoredPosition = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition + new Vector2(300, 0);
+        //yield return new WaitForSeconds(cooldown);
+
     }
     IEnumerator RunTurns(BattleAction playerAction)
     {
@@ -245,6 +251,7 @@ public class BattleSystem : MonoBehaviour
             
             //enemyTurn
             var enemyMove = _enemyUnit.Pokemon.GetRandomMove();
+            
             yield return RunMove(_enemyUnit, _playerUnit, enemyMove);
             yield return RunAfterTurn(_enemyUnit);
             if (state == BattleState.BattleOver) yield break;
@@ -256,8 +263,12 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
+        if (sourceUnit == _enemyUnit)
+        {
+            Reload2(1f, _enemyUnit);
+        }
         bool canRunMove = sourceUnit.Pokemon.OnBeforeMove();
-        // sourceUnit.Pokemon.Base.GetSprites[0];
+        //sourceUnit.Pokemon.Base.GetSprites[0];
         if (!canRunMove)
         {
             yield return ShowStatusChanges(sourceUnit.Pokemon);
@@ -336,6 +347,11 @@ public class BattleSystem : MonoBehaviour
                 yield return HandlePokemonFainted(targetUnit);
             }
             //yield return _dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name}'s attack missed");
+        }
+        if (sourceUnit == _enemyUnit)
+        {
+            _enemyUnit.GetComponent<Image>().sprite = _enemyUnit.Pokemon.Base.GetSprites[0];
+            _enemyUnit.GetComponent<Animator>().enabled = true; _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
         }
     }
 
