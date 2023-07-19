@@ -17,7 +17,7 @@ MonoBehaviour:
   _type: 1
   _power: 45
   _accuary: 100
-  _alwaysHits: 0
+  _alwaysHits: 1
   SpIndex: 0
   MovedSprite: {fileID: 21300000, guid: bd1f3911b99d867419ab2f487188bd7c, type: 3}
   _pp: 25

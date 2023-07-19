@@ -17,7 +17,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] PartyScreen _partyScreen;
     [SerializeField] Image _playerImage, _trainerImage;
     [SerializeField] GameObject _pokeballSprite;
-    [SerializeField] GameObject firstEffect, secondEffect;
+    [SerializeField] GameObject firstEffect, secondEffect,secondEffect2, firstEffect2;
 	//[SerializeField] List<BattleSprite> _battleSprites;
     public event Action<bool> OnBattleOver;
     BattleState state;
@@ -179,10 +179,12 @@ public class BattleSystem : MonoBehaviour
     Vector2 OldPos2;
     private void Reload2(float cooldown, BattleUnit firstUnit)
     {
+        firstEffect2.SetActive(true);
         firstUnit.GetComponent<Image>().sprite = firstUnit.Pokemon.Base.GetSprites[1];
+        secondEffect2.GetComponent<Image>().sprite = _playerUnit.Pokemon.CurrentMove.Base.MovedsSprite;
         firstUnit.GetComponent<Animator>().enabled = false;
         OldPos2 = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition;
-        firstUnit.GetComponent<Image>().rectTransform.anchoredPosition = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition + new Vector2(300, 0);
+        //firstUnit.GetComponent<Image>().rectTransform.anchoredPosition = new Vector2(-320f, -533f);
         //yield return new WaitForSeconds(cooldown);
 
     }
@@ -194,7 +196,7 @@ public class BattleSystem : MonoBehaviour
         {
             _playerUnit.Pokemon.CurrentMove = _playerUnit.Pokemon.Moves[_currentMove];
             _enemyUnit.Pokemon.CurrentMove = _enemyUnit.Pokemon.GetRandomMove();
-
+            if(_playerUnit.Pokemon.CurrentMove.Base.Name == "VineWhip") { ActionSelection(); }
             int playerMovepriorty = _playerUnit.Pokemon.CurrentMove.Base.Priority;
             int enemyMovepriorty = _enemyUnit.Pokemon.CurrentMove.Base.Priority;
 
@@ -218,7 +220,7 @@ public class BattleSystem : MonoBehaviour
             yield return RunAfterTurn(firstUnit);
             if (state == BattleState.BattleOver) yield break;
             //firstUnit.GetComponent<Image>().sprite = firstUnit.Pokemon.Base.GetSprites[0];
-
+            
             if (secondPokemon.HP > 0)
             {
                 //Second Turn
@@ -227,6 +229,7 @@ public class BattleSystem : MonoBehaviour
                 yield return RunAfterTurn(secondUnit);
                 if (state == BattleState.BattleOver) yield break;
             }
+         
         }
         else
         {
@@ -248,7 +251,7 @@ public class BattleSystem : MonoBehaviour
                 yield return TryToEscape();
             }
 
-            
+            //if (_playerUnit.Pokemon.CurrentMove.Base.Name == "VineWhip") { print("VineWhip"); }
             //enemyTurn
             var enemyMove = _enemyUnit.Pokemon.GetRandomMove();
             
@@ -258,7 +261,10 @@ public class BattleSystem : MonoBehaviour
 
         }
         if (state != BattleState.BattleOver)
+        {
+            //print("battleover");
             ActionSelection();
+        }
 
     }
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
@@ -351,7 +357,9 @@ public class BattleSystem : MonoBehaviour
         if (sourceUnit == _enemyUnit)
         {
             _enemyUnit.GetComponent<Image>().sprite = _enemyUnit.Pokemon.Base.GetSprites[0];
-            _enemyUnit.GetComponent<Animator>().enabled = true; _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
+            _enemyUnit.GetComponent<Animator>().enabled = true; 
+            //_enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
+            firstEffect2.SetActive(false);
         }
     }
 
@@ -697,16 +705,17 @@ public class BattleSystem : MonoBehaviour
                 //GetTextPlayer.text = "run";
                 StartCoroutine(RunTurns(BattleAction.Run));
             }
-            if (InputZ) { InputZ = false; }
+            //if (InputZ) { InputZ = false; }
         }
     }
     public void SetZHandleMove()
     {
+        _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = _enemyUnit.oldPos;
         //print(_playerUnit.Pokemon.Moves.Count);
         _currentMove = Mathf.Clamp(_currentMove, 0, _playerUnit.Pokemon.Moves.Count - 1);
         _dialogBox.UpdateMoveSelection(_currentMove, _playerUnit.Pokemon.Moves[_currentMove]);
         var move = _playerUnit.Pokemon.Moves[_currentMove];
-        if (move.PP == 0) return;
+        //if (move.PP == 0) return;
         //_dialogBox.EnableMoveSelector(false);
         //_dialogBox.EnableDialogText(true);
         StartCoroutine(RunTurns(BattleAction.Move));
