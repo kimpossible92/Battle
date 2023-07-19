@@ -184,7 +184,7 @@ public class BattleSystem : MonoBehaviour
         secondEffect2.GetComponent<Image>().sprite = _playerUnit.Pokemon.CurrentMove.Base.MovedsSprite;
         firstUnit.GetComponent<Animator>().enabled = false;
         OldPos2 = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition;
-        //firstUnit.GetComponent<Image>().rectTransform.anchoredPosition = new Vector2(-320f, -533f);
+        firstUnit.GetComponent<Image>().rectTransform.anchoredPosition = firstUnit.GetComponent<Image>().rectTransform.anchoredPosition + new Vector2(300f,0);
         //yield return new WaitForSeconds(cooldown);
 
     }
@@ -358,7 +358,7 @@ public class BattleSystem : MonoBehaviour
         {
             _enemyUnit.GetComponent<Image>().sprite = _enemyUnit.Pokemon.Base.GetSprites[0];
             _enemyUnit.GetComponent<Animator>().enabled = true; 
-            //_enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
+            _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
             firstEffect2.SetActive(false);
         }
     }
