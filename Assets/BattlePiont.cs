@@ -20,7 +20,7 @@ public class BattlePiont : MonoBehaviour
         if(collision.gameObject.tag == "Player") 
         {
             FindObjectOfType<MapArea>().CountReset();
-            FindObjectOfType<UIManager>().OpenCardCollecter();
+            FindObjectOfType<UIManager>().OpenCardCollecter2();
 
         }
     }

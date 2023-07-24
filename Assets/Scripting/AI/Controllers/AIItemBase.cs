@@ -21,9 +21,9 @@ namespace CoverShooter
         public InventoryUsage InventoryUsage = InventoryUsage.autoFind;
 
         /// <summary>
-        /// Weapon index inside the inventory to use when usage is set to 'index'.
+        /// Weapon3 index inside the inventory to use when usage is set to 'index'.
         /// </summary>
-        [Tooltip("Weapon index inside the inventory to use when usage is set to 'index'.")]
+        [Tooltip("Weapon3 index inside the inventory to use when usage is set to 'index'.")]
         public int InventoryIndex = 0;
 
         private CharacterInventory _inventory;

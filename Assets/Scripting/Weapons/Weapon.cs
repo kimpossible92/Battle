@@ -19,7 +19,7 @@ namespace CoverShooter
     }
 
     /// <summary>
-    /// Weapon aiming setting.
+    /// Weapon3 aiming setting.
     /// </summary>
     public enum WeaponAiming
     {

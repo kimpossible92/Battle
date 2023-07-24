@@ -102,7 +102,7 @@ public class CharacterStats : MonoBehaviour
         return characterDefinition.currentHealth;
     }
 
-    public Weapon GetCurrentWeapon()
+    public Weapon3 GetCurrentWeapon()
     {
         if(characterDefinition.weapon != null)
         {

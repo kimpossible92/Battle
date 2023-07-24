@@ -316,9 +316,9 @@ public class EnemyCharmander : MonoBehaviour
         if (!playerIsAlive)
             return;
 
-        if (attack is Weapon)
+        if (attack is Weapon3)
         {
-            ((Weapon)attack).ExecuteAttack(gameObject, player.gameObject);
+            ((Weapon3)attack).ExecuteAttack(gameObject, player.gameObject);
         }
         else if (attack is Spell)
         {

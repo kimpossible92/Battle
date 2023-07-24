@@ -84,7 +84,7 @@ public class ItemPickUps_SO : ScriptableObject
     public Material itemMaterial = null;
     public Sprite itemIcon = null;
     public Rigidbody itemSpawnObject = null;
-    public Weapon weaponSlotObject = null;
+    public Weapon3 weaponSlotObject = null;
 
     public bool isEquipped = false;
     public bool isInteractable = false;

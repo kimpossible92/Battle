@@ -27,9 +27,9 @@ namespace CoverShooter
             }
 
             if (canUpgrade)
-                if (GUILayout.Button("Upgrade Weapon List"))
+                if (GUILayout.Button("Upgrade Weapon3 List"))
                 {
-                    Undo.RecordObjects(targets, "Upgrade Weapon List");
+                    Undo.RecordObjects(targets, "Upgrade Weapon3 List");
 
                     foreach (var object_ in targets)
                     {

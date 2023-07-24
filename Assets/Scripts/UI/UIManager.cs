@@ -1,3 +1,4 @@
+using RPG.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,7 +29,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject Bar;
     [SerializeField] private bool ViewNewGame2 = false;
     [SerializeField] private BattleSystem battleSystem1;
-    [SerializeField] private Camera cam1, cam2;
+    [SerializeField] private Camera cam1, cam2,cam3;
+    [SerializeField] private PersistentObjectSpawner persistentObjectSpawner;
     [HideInInspector] public Camera camera1 => cam1;
     [HideInInspector] public Camera camera2 => cam2;
     [Header("Main Menu")]
@@ -60,6 +62,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameFailed;
     [Header("Get Player Controll")]
     [SerializeField] PlayerControll GetPlayerControll;
+    [SerializeField] GameObject gamePlayer;
+    [SerializeField] GameObject gamePlayer2,gamePlayer3;
     #endregion
 
     #region Unity Behaviour
@@ -68,6 +72,7 @@ public class UIManager : MonoBehaviour
     {
         instance = this;
         Game2.SetActive(false);
+        persistentObjectSpawner.gameObject.SetActive(false);
         cam1.gameObject.SetActive(true);
         cam2.gameObject.SetActive(false);
     }
@@ -226,20 +231,59 @@ public void OpenDesctop()
 
         OpenCardCollecter();
     }
+    public void NewGame3()
+    {
+        Game2.SetActive(false); persistentObjectSpawner.gameObject.SetActive(true);
+        //FindObjectOfType<GameCC>().SetNewState(GameState.Battle);
+        cam1.gameObject.SetActive(false);
+        cam2.gameObject.SetActive(false);
+        cam3.gameObject.SetActive(true);
+    }
     public void NewGame2()
     {
         Game2.SetActive(true);
         FindObjectOfType<GameCC>().SetNewState(GameState.Battle);
         cam1.gameObject.SetActive(false);
+        cam3.gameObject.SetActive(false);
         cam2.gameObject.SetActive(true);
+    }
+    public void OpenCardCollecter2()
+    {
+
+        if (ViewNewGame2)
+        {
+            cutscene_3.SetActive(false);
+            NewGame2();
+            battleSystem1.gameObject.SetActive(true); 
+            return;
+        }
+        AudioManager.instance.PlayDeckBuildingPhaseAudios();
+        therapistDeckCollecter.InitializeCollecter();
+
+        mainMenu.SetActive(false);
+        cutscene_1.SetActive(false);
+        cutscene_2.SetActive(false);
+        cutscene_3.SetActive(false);
+        desctop.SetActive(false);
+        novel.SetActive(false);
+        cardCollecter.SetActive(true);
+        fight.SetActive(false);
+        fight2.SetActive(false);
+        cardsCanvas.SetActive(false);
+        gameEnd.SetActive(false);
+        Bar.SetActive(true);
     }
     public void OpenCardCollecter()
     {
         if (ViewNewGame2)
         {
             cutscene_3.SetActive(false);
-            NewGame2();
-            battleSystem1.gameObject.SetActive(true); 
+            NewGame3();
+            
+            //battleSystem1.gameObject.SetActive(true);
+            gamePlayer.gameObject.SetActive(true);
+            gamePlayer2.gameObject.SetActive(true);
+            gamePlayer3.gameObject.SetActive(true);
             return;
         }
         AudioManager.instance.PlayDeckBuildingPhaseAudios();

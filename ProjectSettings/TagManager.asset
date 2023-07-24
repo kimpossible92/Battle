@@ -28,8 +28,10 @@ TagManager:
   - Metal
   - Water
   - Dirt
+  - Collectable
+  - Inventory
   layers:
- - Default
+  - Default
   - TransparentFX
   - Ignore Raycast
   - 
@@ -46,8 +48,8 @@ TagManager:
   - Impact
   - PlayerSpells
   - EnemySpells
-  - 
-  - 
+  - BuildingsandTrees
+  - Enemy
   - 
   - 
   - 

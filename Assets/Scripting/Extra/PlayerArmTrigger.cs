@@ -9,9 +9,9 @@ namespace CoverShooter
     public class PlayerArmTrigger : MonoBehaviour
     {
         /// <summary>
-        /// Weapon to arm. Index starts at one. Value of 0 means none. 
+        /// Weapon3 to arm. Index starts at one. Value of 0 means none. 
         /// </summary>
-        [Tooltip("Weapon to arm. Index starts at one. Value of 0 means none. ")]
+        [Tooltip("Weapon3 to arm. Index starts at one. Value of 0 means none. ")]
         public int WeaponToUse = 1;
 
         /// <summary>

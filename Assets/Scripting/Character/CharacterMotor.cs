@@ -274,7 +274,7 @@ namespace CoverShooter
         }
 
         /// <summary>
-        /// Weapon currently held or intended to be held in hands (EquippedWeapon is set to none in the middle of changing weapons whereas ActiveWeapon is not).
+        /// Weapon3 currently held or intended to be held in hands (EquippedWeapon is set to none in the middle of changing weapons whereas ActiveWeapon is not).
         /// </summary>
         public WeaponDescription ActiveWeapon
         {
@@ -282,7 +282,7 @@ namespace CoverShooter
         }
 
         /// <summary>
-        /// Weapon currently held in hands.
+        /// Weapon3 currently held in hands.
         /// </summary>
         public WeaponDescription EquippedWeapon
         {
@@ -1178,16 +1178,16 @@ namespace CoverShooter
         public bool IsEquipped = true;
 
         /// <summary>
-        /// Weapon description of the weapon the character is to equip.
+        /// Weapon3 description of the weapon the character is to equip.
         /// </summary>
-        [Tooltip("Weapon description of the weapon the character is to equip.")]
+        [Tooltip("Weapon3 description of the weapon the character is to equip.")]
         public WeaponDescription Weapon = WeaponDescription.Default();
 
         /// <summary>
-        /// Deprecated. Use Upgrade Weapon List button to update to the newer version of the asset.
+        /// Deprecated. Use Upgrade Weapon3 List button to update to the newer version of the asset.
         /// </summary>
-        [Tooltip("Deprecated. Use Upgrade Weapon List button to update to the newer version of the asset.")]
-        [Obsolete("Deprecated. Use Upgrade Weapon List button to update to the newer version of the asset.")]
+        [Tooltip("Deprecated. Use Upgrade Weapon3 List button to update to the newer version of the asset.")]
+        [Obsolete("Deprecated. Use Upgrade Weapon3 List button to update to the newer version of the asset.")]
         [HideInInspector]
         public WeaponDescription[] Weapons;
 

@@ -24,9 +24,9 @@ namespace CoverShooter
         #region Public fields
 
         /// <summary>
-        /// Weapon type to look for, if not present any other weapon will be picked. Used only when AutoFindIndex is enabled.
+        /// Weapon3 type to look for, if not present any other weapon will be picked. Used only when AutoFindIndex is enabled.
         /// </summary>
-        [Tooltip("Weapon type to look for, if not present any other weapon will be picked. Used only when AutoFindIndex is enabled.")]
+        [Tooltip("Weapon3 type to look for, if not present any other weapon will be picked. Used only when AutoFindIndex is enabled.")]
         public WeaponType AutoFindType = WeaponType.Pistol;
 
         /// <summary>
