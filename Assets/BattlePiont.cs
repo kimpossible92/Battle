@@ -1,3 +1,4 @@
+using RPG.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,9 +16,9 @@ public class BattlePiont : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Player") 
+        if (collision.gameObject == MainPlayer.Instance.gameObject)
         {
             FindObjectOfType<MapArea>().CountReset();
             FindObjectOfType<UIManager>().OpenCardCollecter2();

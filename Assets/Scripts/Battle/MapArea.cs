@@ -33,12 +33,13 @@ public class MapArea : MonoBehaviour
     }
     public void NextFightScene()
     {
-        GetCamera1.gameObject.SetActive(false);
-        GetCamera2.gameObject.SetActive(false);
-        //inputComponent.gameObject.SetActive(true);
-        _testHelper.gameObject.SetActive(true);
-        Ellen.gameObject.SetActive(true);
-        GetCameraRig.gameObject.SetActive(true);
+        //GetCamera1.gameObject.SetActive(false);
+        //GetCamera2.gameObject.SetActive(false);
+        ////inputComponent.gameObject.SetActive(true);
+        //_testHelper.gameObject.SetActive(true);
+        //Ellen.gameObject.SetActive(true);
+        //GetCameraRig.gameObject.SetActive(true);
+        FindObjectOfType<UIManager>().OpenCardCollecter();
     }
     public bool MaxBattle()
     {

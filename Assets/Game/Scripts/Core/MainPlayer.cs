@@ -26,6 +26,7 @@ namespace RPG.Core
             {
                 _instance = this;
                 DontDestroyOnLoad(this.gameObject);
+                UIManager.instance.setPlayer(this.gameObject);
             }
             
         }

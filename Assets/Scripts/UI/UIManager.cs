@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] PlayerControll GetPlayerControll;
     [SerializeField] GameObject gamePlayer;
     [SerializeField] GameObject gamePlayer2,gamePlayer3;
+    [SerializeField] GameObject GetEnvironment; 
     #endregion
 
     #region Unity Behaviour
@@ -243,9 +244,16 @@ public void OpenDesctop()
     {
         Game2.SetActive(true);
         FindObjectOfType<GameCC>().SetNewState(GameState.Battle);
+        gamePlayer.SetActive(false);
+        //gamePlayer2.gameObject.SetActive(false);
+        gamePlayer3.gameObject.SetActive(false);
         cam1.gameObject.SetActive(false);
         cam3.gameObject.SetActive(false);
         cam2.gameObject.SetActive(true);
+    }
+    public void setPlayer(GameObject goPlayer)
+    {
+        gamePlayer = goPlayer;
     }
     public void OpenCardCollecter2()
     {
@@ -279,8 +287,8 @@ public void OpenDesctop()
         {
             cutscene_3.SetActive(false);
             NewGame3();
-            
-            //battleSystem1.gameObject.SetActive(true);
+
+            battleSystem1.gameObject.SetActive(false);
             gamePlayer.gameObject.SetActive(true);
             gamePlayer2.gameObject.SetActive(true);
             gamePlayer3.gameObject.SetActive(true);

@@ -12,7 +12,7 @@ namespace RPG.Controller
         private Fighter3 fighter;
         private Mover mover;
         private Health3 health;
-        [SerializeField] private Camera GetMyCamera;
+        //[SerializeField] private Camera GetMyCamera;
         private int enemyLayer = 9;
         
         // Start is called before the first frame update
