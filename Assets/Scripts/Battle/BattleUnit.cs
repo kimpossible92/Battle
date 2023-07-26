@@ -118,6 +118,7 @@ public class BattleUnit : MonoBehaviour
         var sequence = DOTween.Sequence();
         sequence.Append(_image.DOColor(Color.gray, 0.1f));
         sequence.Append(_image.DOColor(_orginalColor, 0.1f));
+
         //NotStay = false;
     }
     public void PlayFaintAnimation()

@@ -196,7 +196,7 @@ public class BattleSystem : MonoBehaviour
         {
             _playerUnit.Pokemon.CurrentMove = _playerUnit.Pokemon.Moves[_currentMove];
             _enemyUnit.Pokemon.CurrentMove = _enemyUnit.Pokemon.GetRandomMove();
-            if(_playerUnit.Pokemon.CurrentMove.Base.Name == "VineWhip") { ActionSelection(); }
+            //if(_playerUnit.Pokemon.CurrentMove.Base.Name == "VineWhip") { ActionSelection(); }
             int playerMovepriorty = _playerUnit.Pokemon.CurrentMove.Base.Priority;
             int enemyMovepriorty = _enemyUnit.Pokemon.CurrentMove.Base.Priority;
 
@@ -269,32 +269,29 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
-        if (sourceUnit == _enemyUnit)
-        {
-            Reload2(1f, _enemyUnit);
-        }
         bool canRunMove = sourceUnit.Pokemon.OnBeforeMove();
-        //sourceUnit.Pokemon.Base.GetSprites[0];
         if (!canRunMove)
         {
+           
             yield return ShowStatusChanges(sourceUnit.Pokemon);
             yield return sourceUnit.Hud.UpdateHp();
             yield break;
         }
         yield return ShowStatusChanges(sourceUnit.Pokemon);
-        //print(move.Base.Name);
+        print(move.Base.Name);
         //StartCoroutine(Reload(0.4f, _playerUnit));
         move.PP--;
         //yield return _dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name} used {move.Base.Name}");
-        
+
         if (CheckIfMoveHits(move, sourceUnit.Pokemon, targetUnit.Pokemon))
         {
             sourceUnit.PlayAttackAnimation();
             yield return new WaitForSeconds(1f);
             targetUnit.PlayHitAnimation();
-            //print("CheckIfMoveHits");
+            print("CheckIfMoveHits");
             if (move.Base.Category == MoveCategory.Status)
             {
+                print(MoveCategory.Status);
                 yield return RunMoveEffeckts(move.Base.Efeckts, sourceUnit.Pokemon, targetUnit.Pokemon, move.Base.Target);
             }
             else
@@ -322,45 +319,15 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            sourceUnit.PlayAttackAnimation();
-            yield return new WaitForSeconds(1f);
-            targetUnit.PlayHitAnimation();
-            //print("CheckIfMoveHits");
-            if (move.Base.Category == MoveCategory.Status)
-            {
-                yield return RunMoveEffeckts(move.Base.Efeckts, sourceUnit.Pokemon, targetUnit.Pokemon, move.Base.Target);
-            }
-            else
-            {
-                var damageDetails = targetUnit.Pokemon.TakeDamage(move, sourceUnit.Pokemon);
-                yield return targetUnit.Hud.UpdateHp();
-                yield return ShowDamageDetails(damageDetails);
-            }
-            if (move.Base.Secondaries != null && move.Base.Secondaries.Count > 0 && targetUnit.Pokemon.HP > 0)
-            {
-                foreach (var secondary in move.Base.Secondaries)
-                {
-                    var rnd = UnityEngine.Random.Range(1, 101);
-                    if (rnd <= secondary.Chance)
-                        yield return RunMoveEffeckts(secondary, sourceUnit.Pokemon, targetUnit.Pokemon, secondary.Target);
-                }
-            }
-
-
-
-            if (targetUnit.Pokemon.HP <= 0)
-            {
-                yield return HandlePokemonFainted(targetUnit);
-            }
-            //yield return _dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name}'s attack missed");
+            yield return _dialogBox.TypeDialog($"{sourceUnit.Pokemon.Base.Name}'s attack missed");
         }
-        if (sourceUnit == _enemyUnit)
-        {
-            _enemyUnit.GetComponent<Image>().sprite = _enemyUnit.Pokemon.Base.GetSprites[0];
-            _enemyUnit.GetComponent<Animator>().enabled = true; 
-            _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
-            firstEffect2.SetActive(false);
-        }
+        //if (sourceUnit == _enemyUnit)
+        //{
+        //    _enemyUnit.GetComponent<Image>().sprite = _enemyUnit.Pokemon.Base.GetSprites[0];
+        //    _enemyUnit.GetComponent<Animator>().enabled = true; 
+        //    _enemyUnit.GetComponent<Image>().rectTransform.anchoredPosition = OldPos2;
+        //    firstEffect2.SetActive(false);
+        //}
     }
 
     IEnumerator RunMoveEffeckts(MoveEfeckts efeckts, Pokemon source, Pokemon target, Movetarget moveTarget)
@@ -425,7 +392,7 @@ public class BattleSystem : MonoBehaviour
             moveAccuracy /= boostValues[evasion];
         else
             moveAccuracy *= boostValues[-evasion];
-
+        print(moveAccuracy);
         return UnityEngine.Random.Range(1, 101) <= moveAccuracy;
     }
     IEnumerator ShowStatusChanges(Pokemon pokemon)
