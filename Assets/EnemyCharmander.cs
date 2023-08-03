@@ -50,7 +50,7 @@ public class EnemyCharmander : MonoBehaviour
     int index;
     float speed, agentSpeed;
     Transform player;
-    private float timeOfLastAttack;
+    [SerializeField]private float timeOfLastAttack;
     private bool playerIsAlive;
     [SerializeField] LayerMask layerFps1;
     [SerializeField] LayerMask layerMaskFps2;
