@@ -3118,10 +3118,11 @@ namespace CoverShooter
             _heightListeners = Util.GetInterfaces<ICharacterHeightListener>(gameObject);
             _coverListeners = Util.GetInterfaces<ICharacterCoverListener>(gameObject);
             _healthListeners = Util.GetInterfaces<ICharacterHealthListener>(gameObject);
-
-            _leftFoot = _animator.GetBoneTransform(HumanBodyBones.LeftFoot);
-            _rightFoot = _animator.GetBoneTransform(HumanBodyBones.RightFoot);
-
+            //if (tag == "Player")
+            {
+                _leftFoot = _animator.GetBoneTransform(HumanBodyBones.LeftFoot);
+                _rightFoot = _animator.GetBoneTransform(HumanBodyBones.RightFoot);
+            }
             animatorToMotorMap[_animator] = this;
 
             if (!Weapon.IsNull && IsEquipped)
@@ -3196,8 +3197,9 @@ namespace CoverShooter
 
         private void LateUpdate()
         {
-            #region Late Update comment
-            if (check_motor) return;
+            //if (tag == "Player") return;
+                #region Late Update comment
+                if (check_motor) return;
             if (IsAlive && !_hasRegistered)
             {
                 _hasRegistered = true;

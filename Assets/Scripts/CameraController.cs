@@ -12,10 +12,10 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (GameMMan.GameIsOver)
+		//if (GameMMan.GameIsOver)
 		{
-			this.enabled = false;
-			return;
+		//	this.enabled = false;
+		//	return;
 		}
 
 		if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)

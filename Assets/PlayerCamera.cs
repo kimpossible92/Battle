@@ -12,7 +12,7 @@ public class PlayerCamera : MonoBehaviour
 
 	public void SetPosition(Vector3 position)
 	{
-		Rig.position = Vector3.SmoothDamp(Rig.position, position+Vector3.forward*1.5f, ref _cameraVelocity, PositionSmoothDamp);
+		Rig.position = Vector3.SmoothDamp(Rig.position, position, ref _cameraVelocity, PositionSmoothDamp);
 	}
 
 	public void SetControlRotation(Vector2 controlRotation)

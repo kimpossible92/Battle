@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using Assets.Scripts.Game;
 public class PhobiaManager : MonoBehaviour
 {
     public static PhobiaManager instance;

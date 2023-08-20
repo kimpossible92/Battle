@@ -229,13 +229,17 @@ public class ICh : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+    }
+    public void OldUpdate()
+    {
         //print(GetComponent<CoverShooter.Actories>().TopPosition);
         LayerMask _mask = LayerMask.GetMask("Impact");
-        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(1, 0, 1), 100, _mask, Color.cyan)){ _rayPositions[0] = MMDebug.Raycast3D(transform.position, new Vector3(1, 0, 1), 100, _mask, Color.cyan, true).point; }
-        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(-1, 0, 1), 100, _mask, Color.cyan)){ _rayPositions[1] = MMDebug.Raycast3D(transform.position, new Vector3(-1, 0, 1), 100, _mask, Color.cyan, true).point; }
-        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(1, 0, -1), 100, _mask, Color.cyan)){ _rayPositions[2] = MMDebug.Raycast3D(transform.position, new Vector3(1, 0, -1), 100, _mask, Color.cyan, true).point; }
-        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(-1, 0, -1), 100, _mask, Color.cyan)){ _rayPositions[3] = MMDebug.Raycast3D(transform.position, new Vector3(-1, 0, -1), 100, _mask, Color.cyan, true).point; }
-            //SetDobivanie();
+        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(1, 0, 1), 100, _mask, Color.cyan)) { _rayPositions[0] = MMDebug.Raycast3D(transform.position, new Vector3(1, 0, 1), 100, _mask, Color.cyan, true).point; }
+        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(-1, 0, 1), 100, _mask, Color.cyan)) { _rayPositions[1] = MMDebug.Raycast3D(transform.position, new Vector3(-1, 0, 1), 100, _mask, Color.cyan, true).point; }
+        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(1, 0, -1), 100, _mask, Color.cyan)) { _rayPositions[2] = MMDebug.Raycast3D(transform.position, new Vector3(1, 0, -1), 100, _mask, Color.cyan, true).point; }
+        if (MMDebug.Raycast3DBoolean(transform.position, new Vector3(-1, 0, -1), 100, _mask, Color.cyan)) { _rayPositions[3] = MMDebug.Raycast3D(transform.position, new Vector3(-1, 0, -1), 100, _mask, Color.cyan, true).point; }
+        //SetDobivanie();
         if (Health_ <= 0)
         {
             transform.position = startVec;
@@ -243,7 +247,7 @@ public class ICh : MonoBehaviour
             Health_ = 100;
         }
         Cursor.lockState = CursorLockMode.Locked;
-        if (GetTexthealth != null) GetTexthealth.text = Health_.ToString() + ":"+Deads;
+        if (GetTexthealth != null) GetTexthealth.text = Health_.ToString() + ":" + Deads;
         ctrl.OnIChUpdate();
         float timeSinceLastAttack = Time.time - timeOfLastAttack;
         bool attackOnCooldown = timeSinceLastAttack < attack.Cooldown;
@@ -257,9 +261,9 @@ public class ICh : MonoBehaviour
         //        this.Attack(); 
         //    }
         //}
-        foreach (var pl2 in GameObject.FindGameObjectsWithTag("enemy")) 
+        foreach (var pl2 in GameObject.FindGameObjectsWithTag("enemy"))
         {
-            if (pl2.GetComponent<EnemyCharmander>()!=null && 
+            if (pl2.GetComponent<EnemyCharmander>() != null &&
                 pl2.GetComponent<EnemyCharmander>().getdobivanie()
                 /*&& Vector3.Distance(transform.position, pl2.transform.position) <= 5f*/)
             {
@@ -269,7 +273,7 @@ public class ICh : MonoBehaviour
         }
         if (Input.GetKey(attackKey))
         {
-            foreach(var pl in GameObject.FindGameObjectsWithTag("enemy"))
+            foreach (var pl in GameObject.FindGameObjectsWithTag("enemy"))
             {
                 float distanceFromPlayer = Vector3.Distance(transform.position, pl.transform.position);
                 bool attackInRange = distanceFromPlayer < attack.Range;
@@ -324,7 +328,7 @@ public class ICh : MonoBehaviour
     private void FixedUpdate()
     {
         UpdateState();
-        ctrl.OnIChFixedUpdate();
+        //ctrl.OnIChFixedUpdate();
         if (Input.GetMouseButton(1))
         {
             RaycastHit hit,hit1,hit2;
@@ -398,17 +402,17 @@ public class ICh : MonoBehaviour
     private void UpdateState()
     {
         //if (Input.GetKey(KeyCode.W)||_horizontalSpeed!=0|| _verticalSpeed!=0) { walkSound(); }
-        UpdateHorizontalSpeed();
-        UpdateVerticalSpeed();
+        //UpdateHorizontalSpeed();
+        //UpdateVerticalSpeed();
 
-        Vector3 movement = _horizontalSpeed * GetMovementDirection() + _verticalSpeed * Vector3.up;
-        _characterController.Move(movement * Time.deltaTime);
+        //Vector3 movement = _horizontalSpeed * GetMovementDirection() + _verticalSpeed * Vector3.up;
+        //_characterController.Move(movement * Time.deltaTime);
 
-        OrientToTargetRotation(movement.SetY(0.0f));
+        //OrientToTargetRotation(movement.SetY(0.0f));
 
-        IsGrounded = _characterController.isGrounded;
+        //IsGrounded = _characterController.isGrounded;
 
-        _characterAnimator.UpdateState();
+        //_characterAnimator.UpdateState();
     }
 
     public void SetMovementInput(Vector3 movementInput)

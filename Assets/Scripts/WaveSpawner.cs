@@ -15,7 +15,7 @@ public class WaveSpawner : MonoBehaviour {
 
 	public Text waveCountdownText;
 
-	public GameMMan gameManager;
+	//public GameMMan gameManager;
 
 	private int waveIndex = 0;
 
@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (waveIndex == waves.Length)
 		{
-			gameManager.WinLevel();
+			//gameManager.WinLevel();
 			this.enabled = false;
 		}
 

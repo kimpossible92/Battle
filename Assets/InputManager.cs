@@ -40,4 +40,23 @@ public class InputManager : MonoBehaviour
             _primaryMovement.y = Input.GetAxisRaw(_axisVertical);
         }
     }
+public static Vector2 getAxisVector()
+        {
+            return new Vector2(getHorInput(), getVerInput());
+        }
+
+        public static float getHorInput()
+        {
+            return Input.GetAxis("Horizontal");
+        }
+
+        public static float getVerInput()
+        {
+            return Input.GetAxis("Vertical");
+        }
+
+        //public static float getMagnitude()
+        //{
+            //return CommonMethods.CalculateMagnitude(getHorInput(), getVerInput());
+        //}
 }

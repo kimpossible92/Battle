@@ -30,6 +30,40 @@ TagManager:
   - Dirt
   - Collectable
   - Inventory
+  - hurtbox
+  - Screen
+  - HQtoTrainyard
+  - gm
+  - EnemySpawner
+  - wp
+  - Arrow
+  - ObjectiveText
+  - scopeImage
+  - Canvas
+  - crossHair
+  - TrainyardtoHQ
+  - Escape
+  - pistol
+  - shopmanager
+  - questobj
+  - q_defense
+  - Vehicle2
+  - target
+  - Misc4
+  - Misc5
+  - Heli2
+  - Heli5
+  - Heli4
+  - Misc2
+  - Misc3
+  - Nuke4
+  - Nuke2
+  - Heli3
+  - Nuke5
+  - Heli1
+  - pickupText
+  - ScrapBox
+  - DroneEnemy
   layers:
   - Default
   - TransparentFX
@@ -37,8 +71,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Player
   - Hidden
   - FPSPlayer
   - FPSGun
@@ -50,14 +84,14 @@ TagManager:
   - EnemySpells
   - BuildingsandTrees
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Hurtbox
+  - Character
+  - Weapon
+  - NPC
+  - Mini Map
+  - PostProcessing
+  - Zombie Collider
+  - Projectile
   - 
   - 
   - 

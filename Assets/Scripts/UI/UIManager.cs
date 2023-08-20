@@ -2,7 +2,7 @@ using RPG.Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Assets.Scripts.Game;
 public class UIManager : MonoBehaviour
 {
     #region Public Fields

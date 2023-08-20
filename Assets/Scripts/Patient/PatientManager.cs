@@ -7,7 +7,7 @@ using Spine.Unity;
 using Spine.Collections;
 using UnityEngine.Events;
 using UnityEngine.UI;
-
+using Assets.Scripts.Game;
 public class PatientManager : MonoBehaviour
 {
     public static PatientManager instance;

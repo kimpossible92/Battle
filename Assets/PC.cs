@@ -8,7 +8,9 @@ public class PC : Ctrl
 
     private PlayerInput _playerInput;
     private PlayerCamera _playerCamera;
-
+	CameraView cameraView;
+	private IMovementDirection _movementDirection;
+    private IMovement _movement;
     public override void Init()
     {
         _playerInput = FindObjectOfType<PlayerInput>();
@@ -17,17 +19,35 @@ public class PC : Ctrl
 
     public override void OnIChFixedUpdate()
 	{
-		_playerCamera.SetPosition(ich.transform.position);
-		_playerCamera.SetControlRotation(ich.GetControlRotation());
-	}
+		//_playerCamera.SetPosition(ich.transform.position);
+		//_playerCamera.SetControlRotation(ich.GetControlRotation());
 
+	}
+    public void ChangeMovementDirection(IMovementDirection movementDirection)
+    {
+        this._movementDirection = movementDirection;
+    }
+
+    public void ChangeMovementDirection(CameraView cameraView)
+    {
+        _movementDirection = SetCameraDirection(cameraView);
+    }
+    private IMovementDirection SetCameraDirection(CameraView cameraView)
+    {
+        this.cameraView = cameraView;
+        return cameraView switch
+        {
+            CameraView.AlwaysForward => new ThirdPersonCameraDirection(),
+            _ => new ThirdPersonCameraDirection()
+        };
+    }
     public override void OnIChUpdate()
     {
-        _playerInput.UpdateInput();
+  //      _playerInput.UpdateInput();
 
-        UpdateControlRotation();
-		ich.SetMovementInput(GetMovementInput());
-		ich.SetJumpInput(_playerInput.JumpInput);
+  //      UpdateControlRotation();
+		//ich.SetMovementInput(GetMovementInput());
+		//ich.SetJumpInput(_playerInput.JumpInput);
 	}
 	private void UpdateControlRotation()
 	{
@@ -43,7 +63,7 @@ public class PC : Ctrl
 		yawAngle += camInput.x * ControlRotationSensitivity;
 
 		controlRotation = new Vector2(pitchAngle, yawAngle);
-		ich.SetControlRotation(controlRotation);
+		//ich.SetControlRotation(controlRotation);
 	}
 
 	private Vector3 GetMovementInput()
