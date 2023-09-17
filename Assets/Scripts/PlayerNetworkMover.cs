@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Characters.FirstPerson;
 using System.Collections;
 
-[RequireComponent(typeof(FirstPersonController))]
+[RequireComponent(typeof(FirstPersonCtrll))]
 
 public class PlayerNetworkMover : MonoBehaviourPunCallbacks, IPunObservable {
 
@@ -38,7 +38,7 @@ public class PlayerNetworkMover : MonoBehaviourPunCallbacks, IPunObservable {
     /// Awake is called when the script instance is being loaded.
     /// </summary>
     void Awake() {
-        // FirstPersonController script require cameraObject to be active in its Start function.
+        // FirstPersonCtrll script require cameraObject to be active in its Start function.
         if (photonView.IsMine) {
             cameraObject.SetActive(true);
         }
@@ -50,7 +50,7 @@ public class PlayerNetworkMover : MonoBehaviourPunCallbacks, IPunObservable {
     /// </summary>
     void Start() {
         if (photonView.IsMine) {
-            GetComponent<FirstPersonController>().enabled = true;
+            GetComponent<FirstPersonCtrll>().enabled = true;
             MoveToLayer(gunObject, LayerMask.NameToLayer("Hidden"));
             MoveToLayer(playerObject, LayerMask.NameToLayer("Hidden"));
             // Set other player's nametag target to this player's nametag transform.

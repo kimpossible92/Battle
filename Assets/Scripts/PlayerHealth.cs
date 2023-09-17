@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 using System.Collections;
 
-[RequireComponent(typeof(FirstPersonController))]
+[RequireComponent(typeof(FirstPersonCtrll))]
 [RequireComponent(typeof(Rigidbody))]
 
 public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     [SerializeField]
     private Animator animator;
 
-    private FirstPersonController fpController;
+    private FirstPersonCtrll fpController;
     private IKControl ikControl;
     private Slider healthSlider;
     private Image damageImage;
@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviourPunCallbacks, IPunObservable {
     /// any of the Update methods is called the first time.
     /// </summary>
     void Start() {
-        fpController = GetComponent<FirstPersonController>();
+        fpController = GetComponent<FirstPersonCtrll>();
         ikControl = GetComponentInChildren<IKControl>();
         damageImage = GameObject.FindGameObjectWithTag("Screen").transform.Find("DamageImage").GetComponent<Image>();
         healthSlider = GameObject.FindGameObjectWithTag("Screen").GetComponentInChildren<Slider>();

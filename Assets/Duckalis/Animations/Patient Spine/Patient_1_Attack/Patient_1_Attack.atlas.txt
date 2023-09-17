@@ -1,0 +1,76 @@
+
+Patient_1_Attack.png
+size: 550,150
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Sprites/body
+  rotate: true
+  xy: 169, 56
+  size: 92, 158
+  orig: 92, 158
+  offset: 0, 0
+  index: -1
+Sprites/hair
+  rotate: true
+  xy: 329, 45
+  size: 44, 74
+  orig: 44, 74
+  offset: 0, 0
+  index: -1
+Sprites/hood
+  rotate: false
+  xy: 482, 74
+  size: 66, 74
+  orig: 66, 74
+  offset: 0, 0
+  index: -1
+Sprites/left leg
+  rotate: true
+  xy: 329, 91
+  size: 57, 151
+  orig: 79, 151
+  offset: 0, 0
+  index: -1
+Sprites/left_arm_lower
+  rotate: false
+  xy: 405, 36
+  size: 69, 53
+  orig: 69, 53
+  offset: 0, 0
+  index: -1
+Sprites/left_arm_upper
+  rotate: true
+  xy: 382, 2
+  size: 32, 62
+  orig: 32, 62
+  offset: 0, 0
+  index: -1
+Sprites/right leg
+  rotate: true
+  xy: 169, 14
+  size: 40, 145
+  orig: 45, 145
+  offset: 0, 0
+  index: -1
+Sprites/right_arm_lower
+  rotate: false
+  xy: 476, 6
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+Sprites/right_arm_upper
+  rotate: true
+  xy: 316, 4
+  size: 39, 64
+  orig: 39, 64
+  offset: 0, 0
+  index: -1
+Sprites/umbrella
+  rotate: true
+  xy: 2, 2
+  size: 146, 165
+  orig: 146, 165
+  offset: 0, 0
+  index: -1
